@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+lastWarOutDir=/Arul/Eclipse WS/SampleApp/src/main/webapp
+launchConfigExternalUrlPrefix=http\://localhost\:8080/sampleApp
+warSrcDir=src/main/webapp
+warSrcDirIsOutput=false

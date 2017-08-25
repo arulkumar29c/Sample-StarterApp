@@ -1,0 +1,129 @@
+<!-- #%L GwtMaterial %% Copyright (C) 2015 - 2017 GwtMaterialDesign %% Licensed 
+	under the Apache License, Version 2.0 (the "License"); you may not use this 
+	file except in compliance with the License. You may obtain a copy of the 
+	License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by 
+	applicable law or agreed to in writing, software distributed under the License 
+	is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY 
+	KIND, either express or implied. See the License for the specific language 
+	governing permissions and limitations under the License. #L% -->
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:m.html="urn:import:gwt.material.design.client.ui.html"
+	xmlns:m.table='urn:import:gwt.material.design.client.ui.table'
+	xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+	<ui:with field="res"
+		type="gwt.material.starter.client.resources.AppResources" />
+
+
+	<ui:style>
+     
+        .navBrand{
+           margin-left: 25%;
+        }
+        .headingIcon{
+           margin-top: -34px;
+           margin-left: 40px;
+          }        
+    </ui:style>
+
+	<g:HTMLPanel>
+		<header>
+			<!-- NavBar -->
+
+			<m:MaterialNavBar ui:field="m_navBar"
+				backgroundColor="LIGHT_BLUE" activates="mysidebar">
+				<m:MaterialImage ui:field="m_image" addStyleNames="{style.logo" />
+
+				<m:MaterialNavBrand fontSize="1.3em"
+					text=" FTE ALLOCATION TOOL" addStyleNames="{style.navBrand}" />
+				<!-- <m:MaterialNavSection float="RIGHT"> <m:MaterialTooltip text="Arul 
+					(S3DBBH)" position="BOTTOM"> <m:MaterialLink ui:field="btnSearch" iconType="PERSON" 
+					iconSize="LARGE" iconPosition="NONE" /> </m:MaterialTooltip> <m:MaterialLabel 
+					text="Arul ( S3DBBH )" textColor="WHITE" /> </m:MaterialNavSection> -->
+			</m:MaterialNavBar>
+
+
+			<m:MaterialSideNav ui:field="m_sideNav" width="300"
+				m:id="mysidebar" type="PUSH" backgroundColor="LIGHT_BLUE_LIGHTEN_5">
+				<m:MaterialRow ui:field="info_row"  >
+					<m:MaterialColumn grid="s3" 
+						shadow="0">
+						<m:MaterialLink iconType="ACCOUNT_CIRCLE"
+							textColor="WHITE" iconSize="LARGE" iconPosition="NONE" />
+					</m:MaterialColumn>
+					<m:MaterialColumn grid="s9"
+						shadow="0">
+						<m:MaterialLabel text="Arul Kumar ( S3DBBH )"
+							textColor="WHITE" />
+					</m:MaterialColumn>
+				</m:MaterialRow>
+				<m:MaterialLink ui:field="m_link_allocation"
+					iconType="INPUT" iconPosition="LEFT" textColor="BLUE" text="Allocation" />
+				<m:MaterialCollapsible>
+					<m:MaterialCollapsibleItem>
+						<m:MaterialCollapsibleHeader waves="DEFAULT">
+							<m:MaterialLink text="Reports" iconType="LIBRARY_BOOKS"
+								textColor="BLUE" />
+						</m:MaterialCollapsibleHeader>
+						<m:MaterialCollapsibleBody>
+							<m.html:UnorderedList>
+								<m:MaterialLink ui:field="m_link_export"
+									iconType="FILTER_1" iconPosition="LEFT" textColor="BLUE" text="Global" />
+								<m:MaterialLink text="Internal" textColor="BLUE"
+									iconType="FILTER_2" iconPosition="LEFT" waves="DEFAULT" />
+								<m:MaterialLink text="External" textColor="BLUE"
+									iconType="FILTER_3" iconPosition="LEFT" waves="DEFAULT" />
+							</m.html:UnorderedList>
+						</m:MaterialCollapsibleBody>
+					</m:MaterialCollapsibleItem>
+
+					<m:MaterialCollapsibleItem>
+						<m:MaterialCollapsibleHeader waves="DEFAULT">
+							<m:MaterialLink text="Admin" iconType="PERSON_OUTLINE"
+								textColor="BLUE" />
+						</m:MaterialCollapsibleHeader>
+						<m:MaterialCollapsibleBody>
+							<m.html:UnorderedList>
+								<m:MaterialLink ui:field="m_link_function"
+									iconType="COLLECTIONS_BOOKMARK" iconPosition="LEFT" textColor="BLUE"
+									text="Manage Function" />
+								<m:MaterialLink ui:field="m_link_deputy"
+									iconType="SUPERVISOR_ACCOUNT" iconPosition="LEFT" textColor="BLUE"
+									text="Manage Deputy" />
+								<m:MaterialLink ui:field="m_link_email_template"
+									iconType="DRAFTS" iconPosition="LEFT" textColor="BLUE"
+									text="Search" />
+
+							</m.html:UnorderedList>
+						</m:MaterialCollapsibleBody>
+					</m:MaterialCollapsibleItem>
+
+				</m:MaterialCollapsible>
+
+			</m:MaterialSideNav>
+
+		</header>
+
+		<m:MaterialContainer ui:field="m_container">
+			<m:MaterialRow ui:field="screenHeading">
+
+				<m:MaterialColumn grid="s12" shadow="0">
+					<m:MaterialIcon ui:field="headingIcon" />
+					<m:MaterialLabel ui:field="m_label_home" textColor="BLACK"
+						fontSize="1.4em"  addStyleNames="{style.headingIcon}"/>
+				</m:MaterialColumn>
+			</m:MaterialRow>
+
+		</m:MaterialContainer>
+
+		<m:MaterialFooter backgroundColor="LIGHT_BLUE" type="FIXED">
+			<m:MaterialFooterCopyright>
+				<m:MaterialLabel text="© 2015 Copyright Swiss Re" />
+			</m:MaterialFooterCopyright>
+		</m:MaterialFooter>
+
+	</g:HTMLPanel>
+
+</ui:UiBinder>

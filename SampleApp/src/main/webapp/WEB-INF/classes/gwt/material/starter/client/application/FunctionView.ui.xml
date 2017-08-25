@@ -1,0 +1,105 @@
+<!-- #%L GwtMaterial %% Copyright (C) 2015 - 2017 GwtMaterialDesign %% Licensed 
+	under the Apache License, Version 2.0 (the "License"); you may not use this 
+	file except in compliance with the License. You may obtain a copy of the 
+	License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by 
+	applicable law or agreed to in writing, software distributed under the License 
+	is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY 
+	KIND, either express or implied. See the License for the specific language 
+	governing permissions and limitations under the License. #L% -->
+
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:m.html="urn:import:gwt.material.design.client.ui.html"
+	xmlns:m.table='urn:import:gwt.material.design.client.ui.table'
+	xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+	<ui:with field="res"
+		type="gwt.material.starter.client.resources.AppResources" />
+
+
+	<ui:style>
+     
+        .navBrand{
+            margin: 24px;
+        }
+        
+    </ui:style>
+
+	<g:HTMLPanel>
+		<m:MaterialRow>
+			<m:MaterialColumn grid="s12" 
+				backgroundColor="WHITE" shadow="1">
+				<m.table:MaterialInfiniteDataTable ui:field="function_table"
+					height="calc(90vh - 170px)" useStickyHeader="false" useCategories="true"
+					useRowExpansion="false" selectionType="MULTIPLE" />
+			</m:MaterialColumn>
+		</m:MaterialRow>
+		<!-- Edit Modal Window -->
+		<m:MaterialModal ui:field="m_modal" type="FIXED_FOOTER"
+			inDuration="500" outDuration="500">
+			<m:MaterialModalContent>
+				<m:MaterialTitle ui:field="function_modal_title"
+					title="Edit Function" />
+				<m:MaterialTextBox ui:field="function_name"
+					placeholder="Enter function name" grid="s4" />
+				<m:MaterialTextBox ui:field="function_alias"
+					placeholder="Enter function alias name" grid="s4" />
+				<m:MaterialDoubleBox ui:field="function_weight"
+					placeholder="Enter weight" grid="s4" />
+				<m:MaterialListBox ui:field="function_mapped"
+					placeholder="select...">
+					<m.html:Option text="Region" />
+					<m.html:Option text="Profit center" />
+				</m:MaterialListBox>
+			</m:MaterialModalContent>
+			<m:MaterialModalFooter>
+				<m:MaterialRow>
+					<m:MaterialButton ui:field="m_modal_closeBt"
+						margin="8" size="MEDIUM" textColor="WHITE" text="Close" iconType="EXIT_TO_APP"
+						iconPosition="LEFT" float="RIGHT" />
+					<m:MaterialButton ui:field="m_modal_saveBt"
+						margin="8" textColor="WHITE" text="Update" iconType="DONE"
+						iconPosition="LEFT" float="RIGHT" />
+				</m:MaterialRow>
+			</m:MaterialModalFooter>
+		</m:MaterialModal>
+		<!-- Edit alert modal -->
+		<m:MaterialModal type="BOTTOM_SHEET" ui:field="m_bottom_modal_alert"
+			inDuration="500" outDuration="500">
+			<m:MaterialModalContent>
+				<m:MaterialTitle ui:field="function_alert_modal_title"
+					title="Alert" description=" " />
+			</m:MaterialModalContent>
+			<m:MaterialModalFooter>
+				<m:MaterialRow>
+					<m:MaterialColumn grid="s10">
+						<m:MaterialButton ui:field="m_bottom_modal_ok"
+							textColor="WHITE" text="Ok" iconType="DONE" iconPosition="LEFT" />
+					</m:MaterialColumn>
+				</m:MaterialRow>
+			</m:MaterialModalFooter>
+		</m:MaterialModal>
+		<!-- Delete confirm modal -->
+		<m:MaterialModal type="BOTTOM_SHEET" ui:field="m_bottom_modal_delete"
+			inDuration="500" outDuration="500">
+			<m:MaterialModalContent>
+				<m:MaterialTitle ui:field="function_delete_confirm_modal_title"
+					title="Alert" description=" Please select any one Function to edit.." />
+			</m:MaterialModalContent>
+			<m:MaterialModalFooter>
+				<m:MaterialRow>
+					<m:MaterialColumn grid="s10">
+						<m:MaterialButton ui:field="m_bottom_Confirm_modal_yes"
+							textColor="WHITE" text="Yes" iconType="DONE" iconPosition="LEFT" />
+					</m:MaterialColumn>
+					<m:MaterialColumn grid="s1">
+						<m:MaterialButton ui:field="m_bottom_Confirm_modal_no"
+							textColor="WHITE" text="No" iconType="CANCEL" iconPosition="LEFT" />
+					</m:MaterialColumn>
+				</m:MaterialRow>
+			</m:MaterialModalFooter>
+		</m:MaterialModal>
+	</g:HTMLPanel>
+
+</ui:UiBinder>
